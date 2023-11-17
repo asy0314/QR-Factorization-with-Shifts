@@ -3,7 +3,7 @@ instantiate()
 using BenchmarkTools: @ballocated
 using LinearAlgebra: I, norm, istriu, triu, qr
 using CairoMakie
-include("HW4_your_code.jl")
+include("Your_code.jl")
 
 
 #----------------------------------------
@@ -79,7 +79,6 @@ householder_QR_div!(out_div, b, QR)
 #----------------------------------------
 # Problem e
 #----------------------------------------
-# YOUR CODE GOES HERE
 
 ## I use 'opnorm' to use the operator norm (aka the matrix norm) for a better comparison
 using LinearAlgebra: opnorm
