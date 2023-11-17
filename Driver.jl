@@ -3,11 +3,11 @@ instantiate()
 using BenchmarkTools: @ballocated
 using LinearAlgebra: I, norm, istriu, triu, qr
 using CairoMakie
-include("Your_code.jl")
+include("funtion_code.jl")
 
 
 #----------------------------------------
-# Problem a 
+# a: almost upper triangular
 #----------------------------------------
 ########################################
 A = randn(30, 20) 
@@ -17,7 +17,7 @@ Q, R = classical_gram_schmidt(A)
 @assert Q * R ≈ A
 
 #----------------------------------------
-# Problem b 
+# b: Givens 
 #----------------------------------------
 ########################################
 A = randn(30, 20) 
@@ -27,7 +27,7 @@ Q, R = modified_gram_schmidt(A)
 @assert Q * R ≈ A
 
 #----------------------------------------
-# Problem c
+# c: Single-Shift vs. Wilkson Shifts
 #----------------------------------------
 ########################################
 A = randn(25, 20) 
@@ -40,7 +40,7 @@ householder_QR!(A)
 @assert vcat(true_R, zeros(5,20)) ≈ triu(A)
 
 #----------------------------------------
-# Problem d
+# d: Breaking symmetry
 #----------------------------------------
 ########################################
 # Testing for memory allocation:
@@ -77,7 +77,7 @@ householder_QR_div!(out_div, b, QR)
 
 
 #----------------------------------------
-# Problem e
+# e
 #----------------------------------------
 
 ## I use 'opnorm' to use the operator norm (aka the matrix norm) for a better comparison
