@@ -1,11 +1,11 @@
 #----------------------------------------
-# Problem a
+# a: reduce a symmetric matrix A to Hessenberg form using Householder reflections
+#    operate in place, overwriting the input matrix with Hessenberg form
 #----------------------------------------
 # This function takes in a matrix A and returns 
 # a reduced QR factorization with factors Q and R.
 # It should not modify A
 function classical_gram_schmidt(A)
-    # YOUR CODE HERE
     m, n = size(A)
     Q = zeros(m, n)
     R = zeros(n, n)
@@ -24,13 +24,15 @@ function classical_gram_schmidt(A)
 end
 
 #----------------------------------------
-# Problem b
+# b: run a single iteration of the unshifted QR algorithm 
+#    using Givens rotations to implement QR factorization on T_k
+#    input = T_k hessenberg from 
+#    output = T_{k+1} Hessenberg form
 #----------------------------------------
 # This function takes in a matrix A and returns 
 # a reduced QR factorization with factors Q and R.
 # It should not modify A
 function modified_gram_schmidt(A)
-    # YOUR CODE HERE
     m, n = size(A)
     Q = zeros(m, n)
     R = zeros(n, n)
@@ -49,14 +51,14 @@ function modified_gram_schmidt(A)
 end
 
 #----------------------------------------
-# Problem c
+# c: ren the practical QR iteration with both the Single-Shift and Wilkinson Shift. 
+#    using QR iteration in b, with criteria for when to implement deflation and when to terminate QR iteration    
 #----------------------------------------
 # This function takes in a matrix A 
 # and computes its QR factorization in place,
 # using householder reflections.
 # It should not allocate any memory.  
 function householder_QR!(A)
-    # YOUR CODE HERE
     m, n = size(A)
     for k in 1:n
         x = view(A, k:m, k)
@@ -82,7 +84,8 @@ function householder_QR!(A)
 end
 
 #----------------------------------------
-# Problem d
+# d: design an experiment that evaluates your practical QR algorithm with shifts
+#    include a semi-log plot showing the rate of convergence of Single-Shift and Wilkinson Shift to compare
 #----------------------------------------
 # These two functions take in the housholder
 # QR factorization from part c and multiply them
@@ -91,7 +94,6 @@ end
 # They should not allocate any memory and instead
 # use the preallocated output vector to record the result. 
 function householder_QR_mul!(out, x, QR)
-    # YOUR CODE HERE
     m, n = size(QR)
     @assert size(out,1) == m && length(x) == n
 
