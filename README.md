@@ -1,7 +1,10 @@
 # QR-Factorization-with-Shifts
-Almost upper triangular; Givens; Single-Shift vs. Wilkson shifts; Breaking symmetry
+a: Almost upper triangular; b: Givens; c: Single-Shift vs. Wilkson shifts; d: Breaking symmetry
 
-The main file is Driver.jl. Please run Driver.jl
+# How to run
+1. install Julia version 1.8 on your computer
+   
+2. open your terminal, run the command: julia --project=. driver.jl
 
 # contents of function_code.jl
 a: reduce a symmetric matrix A to Hessenberg form using Householder reflections
