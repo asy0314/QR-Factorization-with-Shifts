@@ -4,7 +4,9 @@ a: Almost upper triangular; b: Givens; c: Single-Shift vs. Wilkson shifts; d: Br
 # How to run
 1. install Julia version 1.8 on your computer
    
-2. open your terminal, run the command: julia --project=. driver.jl
+2. open your terminal, go to the directory of those files, and run the command: julia --project=. driver.jl
+   
+3. The implemetation will output two convergence figures in pdf at the current folder 
 
 # contents of function_code.jl
 a: reduce a symmetric matrix A to Hessenberg form using Householder reflections
