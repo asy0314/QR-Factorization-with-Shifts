@@ -17,7 +17,7 @@ using Givens rotations to implement QR factorization on T_k
 input = T_k hessenberg from 
 output = T_{k+1} Hessenberg form
 
-c: ren the practical QR iteration with both the Single-Shift and Wilkinson Shift. 
+c: run the practical QR iteration with both the Single-Shift and Wilkinson Shift. 
 using QR iteration in b, with criteria for when to implement deflation and when to terminate QR iteration    
 
 d: design an experiment that evaluates your practical QR algorithm with shifts
